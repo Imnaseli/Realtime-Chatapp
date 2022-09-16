@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% extends 'base/base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    {% block title %}Sign up{% endblock %}
+</head>
+<body>
+{% block content %}
+
+    {% for message in messages %}
+    <div class="alert alert- {{message.tags}} alert-dismissable fade show" role="alert">
+        <strong>Message: </strong>{{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+    
+
+    <h3>Sign-Up</h3>
+
+    <form action="signup" method="post">
+    {% csrf_token %}
+
+        <label for="">Username</label>
+        <input type="text" id="username" name="username" placeholder="Create a Username" required>
+        <br>
+
+        <label for="">First Name</label>
+        <input type="text" id="firstname" name="firstname" placeholder="Osama-bin" required> 
+        <br>
+
+        <label for="">Last Name</label>
+        <input type="text" id="lastname" name="lastname" placeholder="Laden" required> 
+        <br>
+
+        <label for="">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Osamabinboy@gmail.com" required> 
+        <br>
+
+        <label for="">Password</label>
+        <input type="password" id="pass1" name="pass1" required> 
+        <br>
+
+        <label for="">Confirm your Password</label>
+        <input type="password" id="pass2" name="pass2" required> 
+        <br>
+        
+        <button type="submit">Sign-Up</button>
+        <br>
+    </form>
+
+    <a href="{% url 'signin' %}">Already have an account</a>
+{% endblock %}
+</body>
+</html>

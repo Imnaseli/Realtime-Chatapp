@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% extends 'base/base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    {% block title %}Sign In{% endblock %}
+</head>
+<body>
+{% block content %}   
+    
+
+    {% for message in messages %}
+    <div class="alert alert- {{message.tags}} alert-dismissable fade show" role="alert">
+        <strong>{{message}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+
+    <h3>Sign-In</h3>
+
+
+    <form action="/signin" method="post">
+    {% csrf_token %}
+
+        <label for="">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your Username" required>
+        <br>
+
+        <label for="">Password</label>
+        <input type="password" id="pass1" name="pass1" placeholder="Enter your Password" required> 
+        <br>
+
+        <button type="submit">Sign-In</button>
+    </form>
+
+    <a href="{% url 'signup' %}">Dont have an account</a>
+
+
+{% endblock %}
+</body>
+</html>

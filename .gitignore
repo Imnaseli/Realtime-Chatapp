@@ -1,0 +1,8 @@
+Chatapp/db.sqlite3
+Chatapp/authentication/__pycache__
+Chatapp/authentication/migrations
+Chatapp/project/__pycache__
+Chatapp/project/settings.
+Chatapp/room/__pycache__
+Chatapp/room/migrations
+Chatapp/room/tests.py

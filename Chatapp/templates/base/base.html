@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} | Chatapp</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'base/base.css' %}">
+</head>
+<body>
+    {% for message in messages %}
+    <div class="alert alert- {{message.tags}} alert-dismissable fade show" role="alert">
+        <strong>{{message}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+
+    {% block content %}
+    {% endblock %}
+    
+
+    {% block scripts %}
+    {% endblock %}
+</body>
+</html>

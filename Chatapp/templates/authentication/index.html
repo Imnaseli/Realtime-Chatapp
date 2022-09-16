@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'base/base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% block title %}Home{% endblock %}
+</head>
+<body>
+{% block content %}
+    
+
+    {% if user.is_authenticated %}
+
+    <h2>Welcome {{user.first_name}} to the illuminati</h2>
+    <button type="submit"><a href="/signout">Sign-Out</a></button>
+
+    {% else %}
+    <h3>Welcome To the Illuminati</h3>
+    <button type="submit"><a href="/signup">Sign-Up</a></button>
+    <button type="submit"><a href="/signin">Sign-In</a></button>
+
+
+    {% endif %}
+
+    <a href="rooms/">Rooms</a>
+{% endblock %}
+</body>
+</html>
