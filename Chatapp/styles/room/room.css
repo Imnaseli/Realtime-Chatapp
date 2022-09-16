@@ -1,0 +1,25 @@
+.chatwrapper{
+
+    width: 30%;
+    background-color: aqua;
+}
+#chat-messages{
+    background-color:#161724;
+    margin: 10px;
+    height: 400px;
+    overflow-y: auto;
+}
+.chatenter{
+    display: flex;
+    justify-content: center;
+}
+#chat-message-input {
+    border: none;
+    height: 20px;
+}
+#chat-message-submit{
+    width: 60px;
+    height: 20px;
+    border: none;
+    border-radius: 5px;
+}

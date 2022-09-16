@@ -9,8 +9,9 @@ html{
     color: #839973;
     background-color:#161724;
 } 
+
 a{  
     color: #839973;
     cursor: pointer;
-    text-decoration: none;
+    text-decoration: underline;
 }

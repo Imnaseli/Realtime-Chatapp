@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
 {% extends 'base/base.html' %}
+{% block content %}
+{% load static %}
+
+<html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>.</title>
-    {% block title %}{{ room.name }}{% endblock %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'room/room.css' %}">
+    <title>{% block title %}{{ room.name }}{% endblock %}</title>
 </head>
 <body>
-{% block content %}
 
 
     <h1>{{ room.name }}</h1>
@@ -22,25 +26,27 @@
                 <!-- <p class="chatusername" >{{chat.user.username}}</p>
                 <p>{{chat.content}}</p> -->
 
-                <p><b> {{chat.user.username}}: </b> {{chat.content}}  </p>
+                <p><b> {{chat.user.username| title}}: </b> {{chat.content}}  </p>
                 <br>
 
             <!-- </div> -->
 
             {% endfor %}
         </div>
+
+        <div class="chatenter" >
+            <form method="post" action="." >
+            {% csrf_token %}
+                <input type="text" name="content" placeholder="Your message ..." id="chat-message-input">
+                <button
+                    id = "chat-message-submit">
+                    Submit
+                </button>
+            </form>
+        </div>
     </div>
 
-    <div>
-        <form method="post" action="." >
-        {% csrf_token %}
-            <input type="text" name="content" placeholder="Your message ..." id="chat-message-input">
-            <button
-                id = "chat-message-submit">
-                Submit
-            </button>
-        </form>
-    </div>
+
 {% endblock %}
 {% block scripts %}
 {{ room.slug|json_script:"json-roomname" }}
