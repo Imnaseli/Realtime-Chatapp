@@ -1,25 +1,30 @@
 .chatwrapper{
-
-    width: 30%;
-    background-color: aqua;
+    background-color: #45543b;
+    border-radius: 5px;
+    width: 40%;
+}
+.chat{
+    margin: 0.4rem;
+    padding: 0.3rem;
+    background-color: white;
+    width: fit-content;
+    border-radius: 7px;
 }
 #chat-messages{
-    background-color:#161724;
-    margin: 10px;
-    height: 400px;
+    height: 350px;
     overflow-y: auto;
 }
-.chatenter{
-    display: flex;
-    justify-content: center;
-}
+
 #chat-message-input {
     border: none;
-    height: 20px;
+    border-radius: 5px;
+    height: 1.3rem;
+    width: 12rem;
 }
 #chat-message-submit{
-    width: 60px;
-    height: 20px;
+    width:4.2rem ;
+    height: 1.3rem;
     border: none;
     border-radius: 5px;
 }
+

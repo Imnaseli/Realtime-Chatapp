@@ -16,8 +16,8 @@
 <body>
 
 
+    
     <h1>{{ room.name }}</h1>
-
     <div class="chatwrapper">
         <div id="chat-messages">
             {% for chat in chats %}
@@ -26,8 +26,8 @@
                 <!-- <p class="chatusername" >{{chat.user.username}}</p>
                 <p>{{chat.content}}</p> -->
 
-                <p><b> {{chat.user.username| title}}: </b> {{chat.content}}  </p>
-                <br>
+                <p class="chat"><b> {{chat.user.username| title}}: </b> {{chat.content}}  </p>
+                
 
             <!-- </div> -->
 
